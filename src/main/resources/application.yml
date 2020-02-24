@@ -1,0 +1,31 @@
+##端口号 站点名
+server:
+  port: 8989
+  servlet:
+    context-path: /crm
+
+spring:
+  ##数据源配置
+  datasource:
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/crm01?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    ##freemarker
+  freemarker:
+    template-loader-path: classpath:/views/
+    suffix: .ftl
+    content-type: text/html
+    charset: UTF-8
+
+##mybatis
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml
+  type-aliases-package: com.shsxt.crm.vo;com.shsxt.crm.query;com.shsxt.crm.dto;
+  configuration:
+    map-underscore-to-camel-case: true
+
+##pageHelper
+pagehelper:
+  helper-dialect: mysql
