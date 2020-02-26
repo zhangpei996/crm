@@ -37,4 +37,13 @@ public class UserModel {
     public void setTrueName(String trueName) {
         this.trueName = trueName;
     }
+
+    @Override
+    public String toString() {
+        return "UserModel{" +
+                "userIdStr='" + userIdStr + '\'' +
+                ", userName='" + userName + '\'' +
+                ", trueName='" + trueName + '\'' +
+                '}';
+    }
 }
